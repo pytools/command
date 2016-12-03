@@ -12,7 +12,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='pytools_command',
 
-    version='0.0.2',
+    version='0.0.3',
 
     description='A collection of functions to run and evaluate external commands from Python.',
     long_description=long_description,
