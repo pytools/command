@@ -12,7 +12,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='pytools_command',
 
-    version='0.0.5',
+    version='0.0.6',
 
     description='A collection of functions to run and evaluate external commands from Python.',
     long_description=long_description,
@@ -42,5 +42,7 @@ setup(
 
     keywords='command exec observe pytools development',
 
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+
+    install_requires=[],
 )
