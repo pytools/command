@@ -2,6 +2,7 @@
 
 import shlex
 import subprocess
+import sys
 
 
 class CommandReturnValue:
@@ -109,7 +110,12 @@ def observe_command(command, **kwargs):
     proc = subprocess.Popen(command, **kwargs)
 
     try:
-        proc_stdout, proc_stderr = proc.communicate(timeout=timeout)
+        # only Python versions from 3.3 have the 'timeout' argument
+        if sys.version_info[0] >= 3 and sys.version_info[1] >= 3:
+            proc_stdout, proc_stderr = proc.communicate(timeout=timeout)
+
+        else:
+            proc_stdout, proc_stderr = proc.communicate()
 
     except subprocess.TimeoutExpired:
         proc.kill()
