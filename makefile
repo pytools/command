@@ -11,13 +11,19 @@ test:
 requirements:
 	pip freeze > requirements.txt
 
-register:
+clean:
 	-ln -sfn ~/vagrant/.pypirc ~/.pypirc
+	-rm -rf build
+	-rm -rf dist
+
+register:
+	make clean
 	python setup.py sdist bdist_wheel
 	twine register dist/*.whl
 
 upload:
-	-ln -sfn ~/vagrant/.pypirc ~/.pypirc
+	make clean
+	python setup.py sdist bdist_wheel
 	twine upload dist/*
 
-.PHONY: venv install test requirements
+.PHONY: venv install test requirements clean register upload

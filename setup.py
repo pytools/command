@@ -42,7 +42,7 @@ setup(
 
     keywords='command exec observe pytools development',
 
-    packages=find_packages(exclude=('tests', 'docs')),
+    packages=find_packages(exclude=('docs', 'tests')),
 
     install_requires=[],
 )
