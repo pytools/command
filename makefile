@@ -11,13 +11,13 @@ test:
 requirements:
 	pip freeze > requirements.txt
 
-major:
+release-major:
 	bumpversion major
 
-minor:
+release-minor:
 	bumpversion minor
 
-patch:
+release-patch:
 	bumpversion patch
 
 clean:
