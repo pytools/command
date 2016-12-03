@@ -11,6 +11,15 @@ test:
 requirements:
 	pip freeze > requirements.txt
 
+major:
+	bumpversion major
+
+minor:
+	bumpversion minor
+
+patch:
+	bumpversion patch
+
 clean:
 	-ln -sfn ~/vagrant/.pypirc ~/.pypirc
 	-rm -rf build
