@@ -8,6 +8,6 @@ init:
     pip install -r requirements.txt
 
 test:
-    python -m unittest
+    python -m unittest discover
 
 .PHONY: venv init test
