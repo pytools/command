@@ -10,14 +10,14 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='pytools_command',
+    name='pytools-command',
 
-    version='0.1.1',
+    version='0.8.1',
 
     description='A collection of functions to run and evaluate external commands from Python.',
     long_description=long_description,
 
-    url='https://github.com/pytools/pytools_command',
+    url='https://github.com/pytools/pytools-command',
 
     author='Richard King',
     author_email='richrdkng@gmail.com',
@@ -25,7 +25,7 @@ setup(
     license='MIT',
 
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
 
         'Intended Audience :: Developers',
         'Topic :: Software Development',

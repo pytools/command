@@ -1,12 +1,9 @@
-venv:
-	-rm -rf venv
-	virtualenv -p python3 venv
-
-install:
-	pip install -r requirements.txt
+init:
+	make venv
+	make install
 
 test:
-	python -m unittest discover
+	venv/bin/python -m unittest discover
 
 requirements:
 	pip freeze > requirements.txt
@@ -19,6 +16,13 @@ release-minor:
 
 release-patch:
 	bumpversion patch
+
+venv:
+	-rm -rf venv
+	virtualenv -p python3 venv
+
+install:
+	venv/bin/pip install -r requirements.txt
 
 clean:
 	-ln -sfn ~/vagrant/.pypirc ~/.pypirc
@@ -35,4 +39,4 @@ upload:
 	python setup.py sdist bdist_wheel
 	twine upload dist/*
 
-.PHONY: venv install test requirements clean register upload
+.PHONY: init test venv install requirements clean register upload
